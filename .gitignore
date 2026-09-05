@@ -18,6 +18,8 @@
 
 # misc
 .DS_Store
+/.git.codex-backup/
+/.openai/*.tar.gz
 *.pem
 
 # debug

@@ -9,10 +9,10 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 const programs = [
-  { icon: Code2, index: '01', title: 'Python Foundations', audience: 'Classes 8–12', copy: 'Start from zero. Build logic, write clean Python and turn ideas into working apps.', tags: ['Python', 'Logic', 'Projects'], accent: 'cyan' },
-  { icon: BrainCircuit, index: '02', title: 'AI & Machine Learning', audience: 'College & beginners', copy: 'Train models, understand data and create AI projects that belong in your portfolio.', tags: ['ML', 'Neural nets', 'Python'], accent: 'violet' },
-  { icon: Bot, index: '03', title: 'Agentic AI Lab', audience: 'Flagship track', copy: 'Design AI agents that plan, use tools, remember context and complete real tasks.', tags: ['Agents', 'LLMs', 'Automation'], accent: 'lime' },
-  { icon: Database, index: '04', title: 'Data Science Studio', audience: 'Classes 11–College', copy: 'Find the story in data with pandas, visualisation, statistics and guided case studies.', tags: ['Data', 'Pandas', 'Analytics'], accent: 'orange' },
+  { icon: Code2, slug: 'python-foundations', index: '01', title: 'Python Foundations', audience: 'Classes 8–12', copy: 'Start from zero. Build logic, write clean Python and turn ideas into working apps.', tags: ['Python', 'Logic', 'Projects'], accent: 'cyan' },
+  { icon: BrainCircuit, slug: 'ai-machine-learning', index: '02', title: 'AI & Machine Learning', audience: 'College & beginners', copy: 'Train models, understand data and create AI projects that belong in your portfolio.', tags: ['ML', 'Neural nets', 'Python'], accent: 'violet' },
+  { icon: Bot, slug: 'agentic-ai-lab', index: '03', title: 'Agentic AI Lab', audience: 'Flagship track', copy: 'Design AI agents that plan, use tools, remember context and complete real tasks.', tags: ['Agents', 'LLMs', 'Automation'], accent: 'lime' },
+  { icon: Database, slug: 'data-science-studio', index: '04', title: 'Data Science Studio', audience: 'Classes 11–College', copy: 'Find the story in data with pandas, visualisation, statistics and guided case studies.', tags: ['Data', 'Pandas', 'Analytics'], accent: 'orange' },
 ];
 
 const terminalLines = {
@@ -42,15 +42,15 @@ export default function Home() {
   return (
     <main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        '@context': 'https://schema.org', '@type': 'EducationalOrganization', name: 'CodeKolkata.ai',
+        '@context': 'https://schema.org', '@type': 'EducationalOrganization', name: 'CodeAdda.ai',
         description: 'Python, Agentic AI, Machine Learning and Data Science coaching for school and college students in Kolkata.',
         areaServed: 'Kolkata, West Bengal',
         knowsAbout: ['Python programming', 'Agentic AI', 'Artificial Intelligence', 'Machine Learning', 'Data Science'],
       }) }} />
 
       <header className="site-header">
-        <a href="#top" className="brand" aria-label="CodeKolkata.ai home">
-          <span className="brand-mark"><Terminal size={19} /></span><span>CodeKolkata<span>.ai</span></span>
+        <a href="#top" className="brand" aria-label="CodeAdda.ai home">
+          <span className="brand-mark"><Terminal size={19} /></span><span>CodeAdda<span>.ai</span></span>
         </a>
         <nav className="desktop-nav" aria-label="Primary navigation">
           <a href="#programs">Programs</a><a href="#agentic-lab">Agentic AI Lab</a><a href="#method">How it works</a><a href="#faq">FAQ</a>
@@ -90,7 +90,7 @@ export default function Home() {
       <section className="section programs-section" id="programs">
         <div className="section-heading"><div><span className="kicker">// CHOOSE YOUR PATH</span><h2>From first line of code<br />to intelligent systems.</h2></div><p>Clear learning tracks. No endless theory. Every module ends with something you can run, test and show.</p></div>
         <div className="program-grid">{programs.map(({ icon: Icon, ...program }) => <article className={`program-card ${program.accent}`} key={program.title}>
-          <div className="card-top"><span className="program-icon"><Icon /></span><span className="program-index">/{program.index}</span></div><div className="audience-tag">{program.audience}</div><h3>{program.title}</h3><p>{program.copy}</p><div className="tag-row">{program.tags.map(tag => <span key={tag}>{tag}</span>)}</div><a href="#enrol" aria-label={`Explore ${program.title}`}>Explore track <ArrowRight size={16} /></a>
+          <div className="card-top"><span className="program-icon"><Icon /></span><span className="program-index">/{program.index}</span></div><div className="audience-tag">{program.audience}</div><h3>{program.title}</h3><p>{program.copy}</p><div className="tag-row">{program.tags.map(tag => <span key={tag}>{tag}</span>)}</div><a href={`/courses/${program.slug}`} aria-label={`Explore ${program.title}`}>Explore this track <ArrowRight size={16} /></a>
         </article>)}</div>
       </section>
 
@@ -113,9 +113,9 @@ export default function Home() {
         <Accordion className="faq-list"><AccordionItem value="one"><AccordionTrigger>Does my child need prior coding experience?</AccordionTrigger><AccordionContent>No. The Python Foundations track starts from the basics and builds confidence step by step. We group students by age and current skill level.</AccordionContent></AccordionItem><AccordionItem value="two"><AccordionTrigger>What is Agentic AI, and is it suitable for students?</AccordionTrigger><AccordionContent>Agentic AI means systems that can plan and complete tasks using tools. We teach it through age-appropriate Python projects, with strong focus on safe and responsible use.</AccordionContent></AccordionItem><AccordionItem value="three"><AccordionTrigger>Are classes online or offline in Kolkata?</AccordionTrigger><AccordionContent>We offer a hybrid learning format so Kolkata students can join mentor-led sessions and project labs around their school or college schedule.</AccordionContent></AccordionItem><AccordionItem value="four"><AccordionTrigger>Will students build real projects?</AccordionTrigger><AccordionContent>Yes. Every track is project-led. Students create working apps, data stories, ML models and AI agents they can explain and present.</AccordionContent></AccordionItem></Accordion>
       </section>
 
-      <section className="enrol-section" id="enrol"><div className="enrol-grid" aria-hidden="true" /><div className="enrol-content"><span className="kicker lime-text">// YOUR FIRST CLASS IS ON US</span><h2>Your idea could be<br />the next <em>big build.</em></h2><p>Meet a mentor, explore the learning lab and find the right path—free.</p><a className="primary-button large" href="mailto:hello@codekolkata.ai?subject=Free%20AI%20demo%20class">Book your free demo <ArrowRight size={19} /></a><small>No prior coding needed · School & college batches · Kolkata hybrid format</small></div></section>
+      <section className="enrol-section" id="enrol"><div className="enrol-grid" aria-hidden="true" /><div className="enrol-content"><span className="kicker lime-text">// YOUR FIRST CLASS IS ON US</span><h2>Your idea could be<br />the next <em>big build.</em></h2><p>Meet a mentor, explore the learning lab and find the right path—free.</p><a className="primary-button large" href="mailto:hello@codeadda.ai?subject=Free%20AI%20demo%20class">Book your free demo <ArrowRight size={19} /></a><small>No prior coding needed · School & college batches · Kolkata hybrid format</small></div></section>
 
-      <footer><a href="#top" className="brand"><span className="brand-mark"><Terminal size={19} /></span><span>CodeKolkata<span>.ai</span></span></a><p>Python & AI coaching for Kolkata&apos;s young builders.</p><nav aria-label="Footer navigation"><a href="#programs">Programs</a><a href="#agentic-lab">Agentic AI</a><a href="#faq">FAQ</a></nav><span>© 2026 CodeKolkata.ai</span></footer>
+      <footer><a href="#top" className="brand"><span className="brand-mark"><Terminal size={19} /></span><span>CodeAdda<span>.ai</span></span></a><p>Python & AI coaching for Kolkata&apos;s young builders.</p><nav aria-label="Footer navigation"><a href="#programs">Programs</a><a href="#agentic-lab">Agentic AI</a><a href="#faq">FAQ</a></nav><span>© 2026 CodeAdda.ai</span></footer>
     </main>
   );
 }
