@@ -1,4 +1,3 @@
-const CONTACT_EMAIL = 'hellocodeadda@gmail.com';
 const ALLOWED_COURSES = new Set([
   'Python Foundations',
   'AI & Machine Learning',
@@ -13,6 +12,11 @@ type Enquiry = {
   course?: unknown;
   message?: unknown;
   website?: unknown;
+};
+
+type ScriptResult = {
+  ok?: boolean;
+  error?: string;
 };
 
 const clean = (value: unknown, limit: number) =>
@@ -45,12 +49,12 @@ export async function POST(request: Request) {
     );
   }
 
-  const apiKey = process.env.RESEND_API_KEY;
-  const fromEmail = process.env.CONTACT_FROM_EMAIL;
+  const scriptUrl = process.env.GOOGLE_APPS_SCRIPT_URL;
+  const sharedSecret = process.env.CONTACT_FORM_SECRET;
 
-  if (!apiKey || !fromEmail) {
+  if (!scriptUrl || !sharedSecret) {
     console.error(
-      'Contact email requires RESEND_API_KEY and CONTACT_FROM_EMAIL.',
+      'Contact email requires GOOGLE_APPS_SCRIPT_URL and CONTACT_FORM_SECRET.',
     );
     return Response.json(
       {
@@ -61,32 +65,34 @@ export async function POST(request: Request) {
     );
   }
 
-  const text = [
-    `Name: ${name}`,
-    `Reply email: ${email}`,
-    `Course: ${course}`,
-    '',
-    'Message:',
-    message || 'No additional message provided.',
-  ].join('\n');
+  try {
+    const response = await fetch(scriptUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name,
+        email,
+        course,
+        message,
+        secret: sharedSecret,
+      }),
+      redirect: 'follow',
+      signal: AbortSignal.timeout(15_000),
+    });
+    const result = (await response.json()) as ScriptResult;
 
-  const response = await fetch('https://api.resend.com/emails', {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      from: fromEmail,
-      to: [CONTACT_EMAIL],
-      reply_to: email,
-      subject: `Course enquiry: ${course}`,
-      text,
-    }),
-  });
-
-  if (!response.ok) {
-    console.error('Resend rejected a contact enquiry.', await response.text());
+    if (!response.ok || !result.ok) {
+      console.error(
+        'Google Apps Script rejected a contact enquiry.',
+        result.error,
+      );
+      return Response.json(
+        { error: 'We could not send your enquiry. Please try again shortly.' },
+        { status: 502 },
+      );
+    }
+  } catch (error) {
+    console.error('Google Apps Script contact delivery failed.', error);
     return Response.json(
       { error: 'We could not send your enquiry. Please try again shortly.' },
       { status: 502 },
