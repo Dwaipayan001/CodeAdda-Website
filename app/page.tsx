@@ -4,6 +4,8 @@ import {
   ArrowRight,
   Bot,
   BrainCircuit,
+  BriefcaseBusiness,
+  CalendarDays,
   Check,
   Code2,
   Database,
@@ -13,6 +15,7 @@ import {
   Network,
   Play,
   Send,
+  ShieldCheck,
   Sparkles,
   Terminal,
   X,
@@ -152,8 +155,9 @@ export default function Home() {
             '@context': 'https://schema.org',
             '@type': 'EducationalOrganization',
             name: 'CodeAdda.ai',
+            url: 'https://code-adda-ai.vercel.app/',
             description:
-              'Python, Agentic AI, Machine Learning and Data Science coaching for school and college students in Kolkata.',
+              'Weekend-only, live online Agentic AI, Generative AI, Python, Machine Learning and Data Science coaching for school and college students, led by mentors with Big Four GenAI experience.',
             areaServed: 'Kolkata, West Bengal',
             knowsAbout: [
               'Python programming',
@@ -178,6 +182,7 @@ export default function Home() {
         <nav className="desktop-nav" aria-label="Primary navigation">
           <a href="#programs">Programs</a>
           <a href="#agentic-lab">Agentic AI Lab</a>
+          <a href="#mentors">Mentors</a>
           <a href="#method">How it works</a>
           <a href="#faq">FAQ</a>
         </nav>
@@ -200,6 +205,9 @@ export default function Home() {
             <a href="#agentic-lab" onClick={() => setMenuOpen(false)}>
               Agentic AI Lab
             </a>
+            <a href="#mentors" onClick={() => setMenuOpen(false)}>
+              Mentors
+            </a>
             <a href="#method" onClick={() => setMenuOpen(false)}>
               How it works
             </a>
@@ -219,7 +227,7 @@ export default function Home() {
         <div className="hero-glow hero-glow-two" aria-hidden="true" />
         <div className="hero-copy">
           <div className="eyebrow">
-            <span className="pulse" /> Kolkata&apos;s hands-on AI learning lab
+            <span className="pulse" /> Agentic AI coaching in Kolkata
           </div>
           <h1>
             Don&apos;t just use AI.
@@ -231,8 +239,16 @@ export default function Home() {
             <strong>
               Python, Agentic AI, Machine Learning and Data Science coaching
             </strong>{' '}
-            for curious school and college students in Kolkata.
+            for curious school and college students, guided by mentors with
+            hands-on GenAI experience in a Big Four environment.
           </p>
+          <div className="weekend-callout">
+            <CalendarDays />
+            <div>
+              <strong>Weekend-only live online classes</strong>
+              <span>Saturdays &amp; Sundays · No weekday classes</span>
+            </div>
+          </div>
           <div className="hero-actions">
             <a className="primary-button" href="#enrol">
               Start with a free class <ArrowRight size={18} />
@@ -248,8 +264,8 @@ export default function Home() {
               <span>ML</span>
             </div>
             <div>
-              <strong>Learn by building</strong>
-              <small>Small batches · Live mentors · Real projects</small>
+              <strong>Mentors with Big Four GenAI experience</strong>
+              <small>Small batches · Industry context · Real projects</small>
             </div>
           </div>
         </div>
@@ -324,6 +340,66 @@ export default function Home() {
         <i />
         <span>GENERATIVE AI</span>
       </div>
+
+      <section className="mentor-proof" id="mentors">
+        <div className="mentor-proof-intro">
+          <span className="kicker">{'// LEARN FROM PRACTITIONERS'}</span>
+          <h2>
+            Industry experience,
+            <br />
+            <em>inside every lesson.</em>
+          </h2>
+          <p>
+            Learn from professionals who bring hands-on Generative AI experience
+            from a Big Four environment. Concepts are connected to real
+            workflows, practical constraints and the standards expected in
+            professional teams.
+          </p>
+        </div>
+        <div className="mentor-proof-grid">
+          <article>
+            <span>
+              <BriefcaseBusiness />
+            </span>
+            <div>
+              <strong>Big Four perspective</strong>
+              <p>
+                Professional practices translated into clear, student-friendly
+                guidance.
+              </p>
+            </div>
+          </article>
+          <article>
+            <span>
+              <Bot />
+            </span>
+            <div>
+              <strong>Hands-on GenAI experience</strong>
+              <p>
+                Learn from mentors who have worked with modern GenAI tools and
+                workflows.
+              </p>
+            </div>
+          </article>
+          <article>
+            <span>
+              <ShieldCheck />
+            </span>
+            <div>
+              <strong>Responsible real-world thinking</strong>
+              <p>
+                Build with attention to quality, reliability, safety and human
+                oversight.
+              </p>
+            </div>
+          </article>
+        </div>
+        <small className="credential-note">
+          “Big Four” describes our instructors&apos; professional experience.
+          CodeAdda.ai is an independent learning initiative and is not endorsed
+          by or affiliated with their employers.
+        </small>
+      </section>
 
       <section className="section programs-section" id="programs">
         <div className="section-heading">
@@ -482,8 +558,8 @@ export default function Home() {
               Big <em>builds.</em>
             </h2>
             <p>
-              Designed around school schedules, college goals and the confidence
-              to create independently.
+              Designed around school and college schedules, with live online
+              classes kept exclusively to weekends.
             </p>
           </div>
           <div className="metric">
@@ -514,10 +590,10 @@ export default function Home() {
         <div className="local-banner">
           <MapPin />
           <div>
-            <strong>Rooted in Kolkata. Ready for the world.</strong>
+            <strong>Keep weekdays free. Learn on weekends.</strong>
             <span>
-              Hybrid classes for students across Salt Lake, New Town, Garia,
-              Behala and beyond.
+              Live online classes every Saturday and Sunday—join from anywhere
+              without disrupting school or college.
             </span>
           </div>
           <span className="bangla">কোড করো। ভবিষ্যৎ গড়ো।</span>
@@ -560,12 +636,12 @@ export default function Home() {
           </AccordionItem>
           <AccordionItem value="three">
             <AccordionTrigger>
-              Are classes online or offline in Kolkata?
+              When and where are the classes held?
             </AccordionTrigger>
             <AccordionContent>
-              We offer a hybrid learning format so Kolkata students can join
-              mentor-led sessions and project labs around their school or
-              college schedule.
+              All classes are live and online, and are held only on Saturdays
+              and Sundays. There are no weekday classes, so students can learn
+              without disrupting their regular school or college schedule.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="four">
@@ -576,6 +652,15 @@ export default function Home() {
               Yes. Every track is project-led. Students create working apps,
               data stories, ML models and AI agents they can explain and
               present.
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="five">
+            <AccordionTrigger>Who will teach the classes?</AccordionTrigger>
+            <AccordionContent>
+              Sessions are guided by professionals with hands-on Generative AI
+              experience in a Big Four environment. They connect the curriculum
+              to real-world workflows while keeping every lesson approachable
+              for school and college students.
             </AccordionContent>
           </AccordionItem>
         </Accordion>
@@ -592,15 +677,15 @@ export default function Home() {
               <em>learning path.</em>
             </h2>
             <p>
-              Ask about a course, a free demo, schedules or anything else. Tell
-              us what you&apos;re interested in and we&apos;ll get back to you.
+              Ask about a course, a free demo or anything else. All classes are
+              live online on Saturdays and Sundays, leaving weekdays free for
+              school, college and regular commitments.
             </p>
             <a className="contact-email" href={`mailto:${CONTACT_EMAIL}`}>
               <Mail size={18} /> {CONTACT_EMAIL}
             </a>
             <small>
-              No prior coding needed · School & college batches · Kolkata hybrid
-              format
+              No prior coding needed · Weekend-only batches · Live online
             </small>
           </div>
           <form className="contact-form" onSubmit={handleEnquiry}>

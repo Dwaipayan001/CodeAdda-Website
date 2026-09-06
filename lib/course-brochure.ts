@@ -202,7 +202,7 @@ function coverPage(course: Course, accent: Rgb) {
   commands.push(rect(42, 65, 194, 40, accent));
   commands.push(text('BOOK A FREE DEMO', 66, 80, 10, 'F2', [0.04, 0.06, 0.07]));
   commands.push(
-    text('Kolkata + live online', 263, 80, 9, 'F1', [0.6, 0.65, 0.68]),
+    text('Live online / Sat + Sun', 263, 80, 9, 'F1', [0.6, 0.65, 0.68]),
   );
   return commands.join('\n');
 }
@@ -357,7 +357,7 @@ function outcomesPage(course: Course, accent: Rgb) {
   );
   commands.push(text('hello@codeadda.ai', 409, 122, 9, 'F2', accent));
   commands.push(
-    text('Kolkata + live online', 409, 102, 7.5, 'F1', [0.62, 0.67, 0.7]),
+    text('Live online / Sat + Sun', 409, 102, 7.5, 'F1', [0.62, 0.67, 0.7]),
   );
   return commands.join('\n');
 }

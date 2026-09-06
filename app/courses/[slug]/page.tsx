@@ -34,7 +34,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const course = getCourse(slug);
   if (!course) return { title: 'Course not found | CodeAdda.ai' };
-  const description = `${course.summary} Live, project-based ${course.shortTitle} coaching for school and college students in Kolkata.`;
+  const description = `${course.summary} Live online ${course.shortTitle} coaching for school and college students, held on Saturdays and Sundays.`;
   return {
     title: `${course.title} Course in Kolkata | CodeAdda.ai`,
     description,
@@ -168,7 +168,7 @@ export default async function CoursePage({ params }: PageProps) {
                 <dt>
                   <MapPin /> Location
                 </dt>
-                <dd>Kolkata + live online</dd>
+                <dd>Online · Join from anywhere</dd>
               </div>
             </dl>
             <div className="spec-status">
@@ -304,7 +304,7 @@ export default async function CoursePage({ params }: PageProps) {
             Book a free demo <ArrowRight size={19} />
           </a>
           <small>
-            Small student batches · Kolkata hybrid format · No obligation
+            Small student batches · Saturday &amp; Sunday classes · Live online
           </small>
         </div>
       </section>

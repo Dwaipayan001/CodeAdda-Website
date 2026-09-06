@@ -10,7 +10,7 @@ export type Course = {
 
 export const courses: Course[] = [
   {
-    slug: 'python-foundations', code: 'PY-101', title: 'Python Programming Foundations', shortTitle: 'Python Foundations', eyebrow: 'START HERE', level: 'Beginner', ageGroup: 'Classes 8–12', duration: '16 weeks', format: 'Live hybrid · 2 sessions/week', accent: 'cyan',
+    slug: 'python-foundations', code: 'PY-101', title: 'Python Programming Foundations', shortTitle: 'Python Foundations', eyebrow: 'START HERE', level: 'Beginner', ageGroup: 'Classes 8–12', duration: '16 weeks', format: 'Live online · Sat & Sun', accent: 'cyan',
     summary: 'Learn to think like a programmer, write clean Python and turn everyday ideas into useful applications.', promise: 'Go from your first print statement to three confident, working Python projects.',
     overview: 'This beginner-friendly Python course in Kolkata builds real programming confidence—not memorised syntax. Students learn through short explanations, guided coding and weekly challenges, with individual feedback in a small batch.',
     outcomes: ['Write readable Python programs independently', 'Break large problems into logical steps', 'Work with APIs, files and structured data', 'Debug errors using a repeatable method', 'Present finished projects with confidence'],
@@ -36,7 +36,7 @@ export const courses: Course[] = [
     ],
   },
   {
-    slug: 'ai-machine-learning', code: 'AI-201', title: 'AI & Machine Learning', shortTitle: 'AI & Machine Learning', eyebrow: 'MAKE DATA THINK', level: 'Beginner to intermediate', ageGroup: 'Classes 11–College', duration: '20 weeks', format: 'Live hybrid · 2 sessions/week', accent: 'violet',
+    slug: 'ai-machine-learning', code: 'AI-201', title: 'AI & Machine Learning', shortTitle: 'AI & Machine Learning', eyebrow: 'MAKE DATA THINK', level: 'Beginner to intermediate', ageGroup: 'Classes 11–College', duration: '20 weeks', format: 'Live online · Sat & Sun', accent: 'violet',
     summary: 'Understand how machine learning works, train models with Python and build AI projects you can genuinely explain.', promise: 'Move beyond AI buzzwords and build an end-to-end machine learning portfolio.',
     overview: 'A project-led machine learning course for Kolkata students who want a clear, mathematical-but-approachable introduction to AI. Every concept is connected to a dataset, experiment or application so students learn both how a model works and when to trust it.',
     outcomes: ['Prepare data for machine learning', 'Train and compare supervised learning models', 'Evaluate accuracy, bias and common failure modes', 'Explain model decisions in plain language', 'Deploy an interactive ML application'],
@@ -62,7 +62,7 @@ export const courses: Course[] = [
     ],
   },
   {
-    slug: 'agentic-ai-lab', code: 'AG-301', title: 'Agentic AI Lab', shortTitle: 'Agentic AI Lab', eyebrow: 'FLAGSHIP TRACK', level: 'Intermediate', ageGroup: 'Classes 11–College', duration: '18 weeks', format: 'Live lab · 2 sessions/week', accent: 'lime',
+    slug: 'agentic-ai-lab', code: 'AG-301', title: 'Agentic AI Lab', shortTitle: 'Agentic AI Lab', eyebrow: 'FLAGSHIP TRACK', level: 'Intermediate', ageGroup: 'Classes 11–College', duration: '18 weeks', format: 'Live online · Sat & Sun', accent: 'lime',
     summary: 'Design AI agents that reason through goals, use tools, remember context and collaborate to complete real tasks.', promise: 'Build dependable AI workflows—not just clever prompts.',
     overview: 'Our flagship Agentic AI course in Kolkata teaches students how modern AI systems plan and act. Learners build from simple tool-calling assistants to multi-agent workflows, while studying reliability, evaluation, safety and human oversight at every stage.',
     outcomes: ['Design goal-driven agent workflows', 'Connect language models to safe, useful tools', 'Add memory and retrieval to an agent', 'Coordinate specialised agents in one system', 'Evaluate reliability, cost and safety'],
@@ -88,7 +88,7 @@ export const courses: Course[] = [
     ],
   },
   {
-    slug: 'data-science-studio', code: 'DS-210', title: 'Data Science Studio', shortTitle: 'Data Science Studio', eyebrow: 'FIND THE STORY', level: 'Beginner to intermediate', ageGroup: 'Classes 11–College', duration: '18 weeks', format: 'Live hybrid · 2 sessions/week', accent: 'orange',
+    slug: 'data-science-studio', code: 'DS-210', title: 'Data Science Studio', shortTitle: 'Data Science Studio', eyebrow: 'FIND THE STORY', level: 'Beginner to intermediate', ageGroup: 'Classes 11–College', duration: '18 weeks', format: 'Live online · Sat & Sun', accent: 'orange',
     summary: 'Ask better questions, analyse real datasets and communicate clear insights with Python, statistics and visual storytelling.', promise: 'Turn messy data into decisions people can understand and use.',
     overview: 'This hands-on data science course in Kolkata combines Python analysis, statistics and communication. Students investigate locally relevant and public datasets, learn to avoid misleading conclusions and create portfolio-ready notebooks and dashboards.',
     outcomes: ['Clean and organise real-world datasets', 'Explore data with sound statistical thinking', 'Create clear and honest visualisations', 'Build repeatable analysis workflows', 'Present insights to a non-technical audience'],
