@@ -38,6 +38,7 @@ export async function generateMetadata({
   return {
     title: `${course.title} Course in Kolkata | CodeAdda.ai`,
     description,
+    alternates: { canonical: `/courses/${course.slug}` },
     keywords: [
       `${course.shortTitle} course Kolkata`,
       `${course.shortTitle} coaching for students`,
@@ -47,6 +48,7 @@ export async function generateMetadata({
     openGraph: {
       title: `${course.title} | CodeAdda.ai`,
       description,
+      url: `/courses/${course.slug}`,
       type: 'website',
       locale: 'en_IN',
       images: [],

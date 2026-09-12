@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
+import { SITE_URL } from '@/lib/site';
 import './globals.css';
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] });
@@ -9,7 +10,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://code-adda-ai.vercel.app'),
+  metadataBase: new URL(SITE_URL),
   title: 'Agentic AI Coaching in Kolkata | CodeAdda.ai',
   description:
     'Learn Agentic AI, Generative AI, Python, Machine Learning and Data Science online on Saturdays and Sundays with mentors who bring Big Four GenAI experience.',
